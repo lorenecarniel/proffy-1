@@ -1,0 +1,151 @@
+#login-page {
+	height: 100vh;
+	width: 100vw;
+	display: flex;
+	background-color: var(--color-background);
+}
+#login-page .intro-container {
+	width: 53%;
+	padding: 8rem;
+	background: var(--color-primary);
+}
+#login-page .intro-container .background {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-size: contain;
+	background-image: url('../../assets/images/success-background.svg');
+}
+#login-page .intro-container .wrapper {
+	max-width: 435px;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+}
+#login-page .intro-container .wrapper .description {
+	font-family: 'Poppins';
+	font-size: 3.2rem;
+	color: var(--color-text-in-primary);
+}
+
+.input-container {
+	display: flex;
+	flex: 1;
+	align-items: center;
+	flex-direction: column;
+}
+.input-container form {
+	flex: 1;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	position: relative;
+}
+.input-container form > label[for='email'] {
+	font-family: 'Poppins';
+	font-size: 36px;
+	font-weight: 600;
+	align-self: flex-start;
+	color: var(--color-text-title);
+	margin-bottom: 40px;
+}
+.input-container .input-wrapper {
+	display: flex;
+	flex-direction: column;
+	margin-bottom: 24px;
+}
+.input-container .input-wrapper input {
+	min-width: 350px;
+	font-family: 'Poppins';
+	font-size: 16px;
+}
+.input-container .actions {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	margin-bottom: 40px;
+}
+.input-container .actions .checkbox {
+	display: flex;
+	align-items: center;
+}
+.input-container .actions .checkbox .checkbox-input {
+	width: 24px;
+	height: 24px;
+	border-radius: 8px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	/* disabled */
+	border: 1px solid var(--color-line-in-white);
+	background-color: var(--color-input-background);
+}
+.input-container .actions .checkbox .checkbox-input.active {
+	border: 0;
+	background-color: var(--color-secondary);
+}
+.input-container .actions .checkbox .checkbox-input:focus {
+	outline: 0;
+}
+.input-container .actions .checkbox label,
+.input-container .actions a {
+	font-family: 'Poppins';
+	font-size: 14;
+	color: var(--color-text-complement);
+	text-decoration: none;
+	user-select: none;
+}
+.input-container .actions .checkbox label {
+	margin-left: 16px;
+}
+.input-container form a[type='submit'] {
+	border: 0;
+	width: 100%;
+	padding: 2rem;
+	font-size: 16px;
+	font-weight: 600;
+	border-radius: 8px;
+	font-family: 'Archivo';
+	text-decoration: none;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+
+	/* active */
+	color: var(--color-button-text);
+	background-color: var(--color-secondary);
+}
+.input-container form a.disabled {
+	background-color: #dcdce5;
+	color: var(--color-text-complement);
+}
+
+.input-container .footer {
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	margin-bottom: 46px;
+}
+.input-container .footer span {
+	font-family: 'Poppins';
+	font-size: 12px;
+	color: var(--color-text-complement);
+}
+.input-container .footer .signIn {
+	display: flex;
+	flex-direction: column;
+	font-family: 'Poppins';
+	font-size: 16px;
+}
+.input-container .footer .signIn a {
+	font-weight: 600;
+	color: var(--color-primary);
+}
