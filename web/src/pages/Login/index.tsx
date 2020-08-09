@@ -25,7 +25,8 @@ function Login() {
 	}
 	console.log(`signed: ${signed}`);
 
-	async function handleLogin() {
+	async function handleLogin(e: FormEvent) {
+		e.preventDefault();
 		logIn(email, password);
 	}
 
@@ -73,7 +74,7 @@ function Login() {
 						</div>
 						<a href='#'>Esqueci minha senha</a>
 					</div>
-					<button type='submit' className={isLinkEnabled} onClick={handleLogin}>
+					<button type='button' className={isLinkEnabled} onClick={handleLogin}>
 						Entrar
 					</button>
 					<footer className='footer'>

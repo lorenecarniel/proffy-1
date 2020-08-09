@@ -1,17 +1,17 @@
 import React from 'react';
-import { BrowserRouter, Route } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Login from '../pages/Login';
-import ForgotPassword from '../pages/ForgotPassword';
 import SignIn from '../pages/SignIn';
+import ForgotPassword from '../pages/ForgotPassword';
 
-function Routes() {
+function AuthRoutes() {
 	return (
-		<BrowserRouter>
+		<>
 			<Route exact path='/' component={Login} />
 			<Route path='/forgotPassword' component={ForgotPassword} />
 			<Route path='/signIn' component={SignIn} />
-		</BrowserRouter>
+		</>
 	);
 }
 
-export default Routes;
+export default AuthRoutes;

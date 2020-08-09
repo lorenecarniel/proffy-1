@@ -103,7 +103,7 @@
 .input-container .actions .checkbox label {
 	margin-left: 16px;
 }
-.input-container form button[type='submit'] {
+.input-container form button[type='button'] {
 	border: 0;
 	width: 100%;
 	padding: 2rem;
