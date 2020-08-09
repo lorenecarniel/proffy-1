@@ -15,7 +15,7 @@ interface UserProps {
 interface AuthProps {
 	signed: boolean;
 	user: UserProps | null;
-	logIn(email: string, password: string): Promise<void>;
+	logIn(email: string, password: string, shouldRemember?: boolean): Promise<void>;
 	logOut(): void;
 }
 
@@ -38,7 +38,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 		loadStoredData();
 	}, []);
 
-	async function logIn(email: string, password: string) {
+	async function logIn(email: string, password: string, shouldRemember?: boolean) {
 		const user = await api.get('/users', {
 			params: {
 				email,
@@ -47,13 +47,15 @@ export const AuthProvider: React.FC = ({ children }) => {
 		});
 		console.log(user.data);
 
-		const { token } = user.data;
-		api.defaults.headers['Authorization'] = `Bearer ${token}`;
+		if (shouldRemember) {
+			// token
+			const { token } = user.data;
+			api.defaults.headers['Authorization'] = `Bearer ${token}`;
+			localStorage.setItem('@RProffy:token', token);
+		}
 
 		setUser(user.data);
 		localStorage.setItem('@RProffy:user', JSON.stringify(user.data));
-		// token
-		localStorage.setItem('@RProffy:token', token);
 	}
 
 	function logOut() {

@@ -13,7 +13,7 @@ interface PageHeaderProps {
 const PageHeader: React.FC<PageHeaderProps> = (props) => (
 	<header className='page-header'>
 		<div className='top-bar-container'>
-			<Link to='/landing'>
+			<Link to='/'>
 				<img src={backIcon} alt='Voltar' />
 			</Link>
 			<img src={logoImg} alt='Proffy' />

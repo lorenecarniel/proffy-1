@@ -7,8 +7,10 @@ import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 import './styles.css';
 import api from '../../services/api';
+import { useAuth } from '../../context/auth';
 
-function Landing() {
+const Landing: React.FC = () => {
+	const { logOut, signed } = useAuth();
 	const [totalConnections, setTotalConnections] = useState(0);
 
 	useEffect(() => {
@@ -18,8 +20,14 @@ function Landing() {
 		});
 	}, []);
 
+	function handleLogOut() {
+		logOut();
+		console.log(signed);
+	}
+
 	return (
 		<div id='page-landing'>
+			<button onClick={handleLogOut}>Log Out</button>
 			<div id='page-landing-content' className='container'>
 				<div className='logo-container'>
 					<img src={logoImg} alt='Proffy' />
@@ -43,6 +51,6 @@ function Landing() {
 			</div>
 		</div>
 	);
-}
+};
 
 export default Landing;

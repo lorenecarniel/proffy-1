@@ -7,7 +7,7 @@ import purpleHeart from '../../assets/images/icons/purple-heart.svg';
 import { useAuth } from '../../context/auth';
 
 function Login() {
-	const { signed, logIn } = useAuth();
+	const { logIn } = useAuth();
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -23,11 +23,12 @@ function Login() {
 			setIsChecked('active');
 		}
 	}
-	console.log(`signed: ${signed}`);
 
 	async function handleLogin(e: FormEvent) {
 		e.preventDefault();
-		logIn(email, password);
+		const shouldRemember = isChecked === 'active' ? true : false;
+
+		logIn(email, password, shouldRemember);
 	}
 
 	return (
@@ -67,6 +68,7 @@ function Login() {
 					</div>
 					<div className='actions'>
 						<div className='checkbox' onClick={checkBox}>
+							{/* isChecked recebe 'active' quando clicado */}
 							<button className={`checkbox-input ${isChecked}`}>
 								<img src={successCheck} alt='Checked' />
 							</button>
