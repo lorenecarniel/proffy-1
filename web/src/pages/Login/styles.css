@@ -103,7 +103,7 @@
 .input-container .actions .checkbox label {
 	margin-left: 16px;
 }
-.input-container form a[type='submit'] {
+.input-container form button[type='submit'] {
 	border: 0;
 	width: 100%;
 	padding: 2rem;
@@ -120,7 +120,7 @@
 	color: var(--color-button-text);
 	background-color: var(--color-secondary);
 }
-.input-container form a.disabled {
+.input-container form button.disabled {
 	background-color: #dcdce5;
 	color: var(--color-text-complement);
 }

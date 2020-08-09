@@ -27,4 +27,17 @@ export default class UsersController {
 		await db('users').select('users.*').where('id', '=', user_id).update(data);
 		res.status(201).send('update successful');
 	}
+
+	async isCreated(req: Request, res: Response) {
+		const loginCredentials = req.query;
+		const email = loginCredentials.email as string;
+		const password = loginCredentials.password as string;
+
+		const user = await db('users')
+			.select('users.*')
+			.where('email', '=', email)
+			.where('password', '=', password);
+
+		res.json(user);
+	}
 }

@@ -1,12 +1,15 @@
 import './styles.css';
-import { Link } from 'react-router-dom';
 import Input from '../../components/Input';
 import logoImg from '../../assets/images/logo.svg';
-import React, { useState, FormEvent } from 'react';
+import React, { useState, FormEvent, useContext } from 'react';
 import successCheck from '../../assets/images/icons/checked.svg';
 import purpleHeart from '../../assets/images/icons/purple-heart.svg';
+import api from '../../services/api';
+import AuthContext from '../../context/auth';
 
 function Login() {
+	const { signed, logIn } = useContext(AuthContext);
+
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
 	const [isChecked, setIsChecked] = useState('');
@@ -20,6 +23,10 @@ function Login() {
 		} else {
 			setIsChecked('active');
 		}
+	}
+
+	async function handleLogin() {
+		logIn(email, password);
 	}
 
 	return (
@@ -66,9 +73,9 @@ function Login() {
 						</div>
 						<a href='#'>Esqueci minha senha</a>
 					</div>
-					<Link to='/landing' type='submit' className={isLinkEnabled}>
+					<button type='submit' className={isLinkEnabled} onClick={handleLogin}>
 						Entrar
-					</Link>
+					</button>
 					<footer className='footer'>
 						<div className='signIn'>
 							Não tem conta?
