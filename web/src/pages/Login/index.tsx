@@ -1,14 +1,13 @@
 import './styles.css';
 import Input from '../../components/Input';
 import logoImg from '../../assets/images/logo.svg';
-import React, { useState, FormEvent, useContext } from 'react';
+import React, { useState, FormEvent } from 'react';
 import successCheck from '../../assets/images/icons/checked.svg';
 import purpleHeart from '../../assets/images/icons/purple-heart.svg';
-import api from '../../services/api';
-import AuthContext from '../../context/auth';
+import { useAuth } from '../../context/auth';
 
 function Login() {
-	const { signed, logIn } = useContext(AuthContext);
+	const { signed, logIn } = useAuth();
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -24,6 +23,7 @@ function Login() {
 			setIsChecked('active');
 		}
 	}
+	console.log(`signed: ${signed}`);
 
 	async function handleLogin() {
 		logIn(email, password);

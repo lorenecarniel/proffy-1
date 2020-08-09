@@ -1,15 +1,14 @@
 import React from 'react';
-import Routes from './routes/auth.routes';
+import AuthRoutes from './routes/auth.routes';
+import AppRoutes from './routes/app.routes';
 import './assets/styles/global.css';
-import { AuthProvider } from './context/auth';
+import { useAuth, AuthProvider } from './context/auth';
 
 // JSX = JavaScript + XML
 function App() {
-	return (
-		<AuthProvider>
-			<Routes />
-		</AuthProvider>
-	);
+	const { signed } = useAuth();
+
+	return <AuthProvider>{signed ? <AppRoutes /> : <AuthRoutes />}</AuthProvider>;
 }
 
 export default App;
