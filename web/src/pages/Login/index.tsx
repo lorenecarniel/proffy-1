@@ -24,8 +24,7 @@ function Login() {
 		}
 	}
 
-	async function handleLogin(e: FormEvent) {
-		e.preventDefault();
+	async function handleLogin() {
 		const shouldRemember = isChecked === 'active' ? true : false;
 
 		logIn(email, password, shouldRemember);
@@ -76,7 +75,7 @@ function Login() {
 						</div>
 						<a href='#'>Esqueci minha senha</a>
 					</div>
-					<button type='button' className={isLinkEnabled} onClick={handleLogin}>
+					<button type='submit' className={isLinkEnabled} onClick={handleLogin}>
 						Entrar
 					</button>
 					<footer className='footer'>

@@ -50,9 +50,10 @@ export const AuthProvider: React.FC = ({ children }) => {
 		if (shouldRemember) {
 			// token
 			const { token } = user.data;
-			api.defaults.headers['Authorization'] = `Bearer ${token}`;
 			localStorage.setItem('@RProffy:token', token);
+			api.defaults.headers['Authorization'] = `Bearer ${token}`;
 		}
+		console.log(`UserData in Auth.tsx: ${user.data}`);
 
 		setUser(user.data);
 		localStorage.setItem('@RProffy:user', JSON.stringify(user.data));

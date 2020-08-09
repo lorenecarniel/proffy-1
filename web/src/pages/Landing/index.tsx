@@ -22,12 +22,14 @@ const Landing: React.FC = () => {
 
 	function handleLogOut() {
 		logOut();
-		console.log(signed);
+		console.log(`Signed in logOut: ${signed}`);
 	}
 
 	return (
 		<div id='page-landing'>
-			<button onClick={handleLogOut}>Log Out</button>
+			<button type='submit' onClick={handleLogOut}>
+				Log Out
+			</button>
 			<div id='page-landing-content' className='container'>
 				<div className='logo-container'>
 					<img src={logoImg} alt='Proffy' />
