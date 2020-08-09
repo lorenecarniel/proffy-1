@@ -1,18 +1,25 @@
-import express, { response } from 'express'
-import ClassesController from './controllers/ClassesController'
-import ConnectionsController from './controllers/ConnectionsController'
+import express, { response } from 'express';
+import ClassesController from './controllers/ClassesController';
+import ConnectionsController from './controllers/ConnectionsController';
+import UsersController from './controllers/UsersController';
 
-const routes = express.Router()
+const routes = express.Router();
 
-const classesControllers = new ClassesController()
-const connectionsController = new ConnectionsController()
+const usersController = new UsersController();
+const classesControllers = new ClassesController();
+const connectionsController = new ConnectionsController();
 
-routes.post('/classes', classesControllers.create)
-routes.get('/classes', classesControllers.index)
-routes.post('/connections', connectionsController.create)
-routes.get('/connections', connectionsController.index)
+// users
+routes.post('/users', usersController.create);
+routes.put('/users/:id', usersController.updateUser);
+// classes
+routes.post('/classes/:id', classesControllers.create);
+routes.get('/classes', classesControllers.index);
+// connections
+routes.post('/connections', connectionsController.create);
+routes.get('/connections', connectionsController.index);
 
-export default routes
+export default routes;
 
 /* 
     GET: Buscar ou listar informações
