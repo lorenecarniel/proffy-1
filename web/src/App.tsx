@@ -1,18 +1,15 @@
-import React from 'react';
-import './assets/styles/global.css';
-import Routes from './routes/index';
-import { BrowserRouter } from 'react-router-dom';
-import { AuthProvider } from './context/auth';
+import React from 'react'
+import './assets/styles/global.css'
+import Routes from './routes/index'
+import { BrowserRouter } from 'react-router-dom'
 
 // JSX = JavaScript + XML
 function App() {
 	return (
 		<BrowserRouter>
-			<AuthProvider>
-				<Routes />
-			</AuthProvider>
+			<Routes />
 		</BrowserRouter>
-	);
+	)
 }
 
-export default App;
+export default App

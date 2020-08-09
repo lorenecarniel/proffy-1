@@ -1,33 +1,33 @@
-import './styles.css';
-import Input from '../../components/Input';
-import logoImg from '../../assets/images/logo.svg';
-import React, { useState, FormEvent } from 'react';
-import successCheck from '../../assets/images/icons/checked.svg';
-import purpleHeart from '../../assets/images/icons/purple-heart.svg';
-import { useAuth } from '../../context/auth';
+import './styles.css'
+import Input from '../../components/Input'
+import logoImg from '../../assets/images/logo.svg'
+import React, { useState, FormEvent } from 'react'
+import successCheck from '../../assets/images/icons/checked.svg'
+import purpleHeart from '../../assets/images/icons/purple-heart.svg'
+import { useAuth } from '../../context/auth'
 
 function Login() {
-	const { logIn } = useAuth();
+	const { logIn } = useAuth()
 
-	const [email, setEmail] = useState('');
-	const [password, setPassword] = useState('');
-	const [isChecked, setIsChecked] = useState('');
+	const [email, setEmail] = useState('')
+	const [password, setPassword] = useState('')
+	const [isChecked, setIsChecked] = useState('')
 
-	const [isLinkEnabled, setIsLinkEnabled] = useState('disabled');
+	const [isLinkEnabled, setIsLinkEnabled] = useState('disabled')
 
 	function checkBox(e: FormEvent) {
-		e.preventDefault();
+		e.preventDefault()
 		if (isChecked === 'active') {
-			setIsChecked('');
+			setIsChecked('')
 		} else {
-			setIsChecked('active');
+			setIsChecked('active')
 		}
 	}
 
 	async function handleLogin() {
-		const shouldRemember = isChecked === 'active' ? true : false;
+		const shouldRemember = isChecked === 'active' ? true : false
 
-		logIn(email, password, shouldRemember);
+		logIn(email, password, shouldRemember)
 	}
 
 	return (
@@ -50,8 +50,8 @@ function Login() {
 							placeholder='E-mail'
 							value={email}
 							onChange={(e) => {
-								setIsLinkEnabled('');
-								setEmail(e.target.value);
+								setIsLinkEnabled('')
+								setEmail(e.target.value)
 							}}
 						/>
 						<Input
@@ -60,8 +60,8 @@ function Login() {
 							placeholder='Senha'
 							value={password}
 							onChange={(e) => {
-								setIsLinkEnabled('');
-								setPassword(e.target.value);
+								setIsLinkEnabled('')
+								setPassword(e.target.value)
 							}}
 						/>
 					</div>
@@ -90,7 +90,7 @@ function Login() {
 				</form>
 			</div>
 		</div>
-	);
+	)
 }
 
-export default Login;
+export default Login
