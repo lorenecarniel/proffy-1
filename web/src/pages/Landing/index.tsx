@@ -1,28 +1,28 @@
-import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
-import logoImg from '../../assets/images/logo.svg'
-import landingImg from '../../assets/images/landing.svg'
-import studyIcon from '../../assets/images/icons/study.svg'
-import giveClassesIcon from '../../assets/images/icons/give-classes.svg'
-import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg'
-import './styles.css'
-import api from '../../services/api'
-import { useAuth } from '../../context/auth'
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import logoImg from '../../assets/images/logo.svg';
+import landingImg from '../../assets/images/landing.svg';
+import studyIcon from '../../assets/images/icons/study.svg';
+import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
+import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
+import './styles.css';
+import api from '../../services/api';
+import { useAuth } from '../../context/auth';
 
 const Landing: React.FC = () => {
-	const { logOut, signed } = useAuth()
-	const [totalConnections, setTotalConnections] = useState(0)
+	const { logOut, signed } = useAuth();
+	const [totalConnections, setTotalConnections] = useState(0);
 
 	useEffect(() => {
 		api.get('connections').then((res) => {
-			const { total } = res.data
-			setTotalConnections(total)
-		})
-	}, [])
+			const { total } = res.data;
+			setTotalConnections(total);
+		});
+	}, []);
 
 	function handleLogOut() {
-		logOut()
-		console.log(`Signed inside logOut: ${signed}`)
+		logOut();
+		console.log(`Signed inside logOut: ${signed}`);
 	}
 
 	return (
@@ -52,7 +52,7 @@ const Landing: React.FC = () => {
 				</span>
 			</div>
 		</div>
-	)
-}
+	);
+};
 
-export default Landing
+export default Landing;
