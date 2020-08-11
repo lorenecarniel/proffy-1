@@ -5,9 +5,8 @@ import { AuthProvider, useAuth } from '../context/auth';
 
 const Routes: React.FC = () => {
 	const { signed } = useAuth();
-	console.log(`Route index: ${signed}`);
 
-	return <AuthProvider>{signed ? <AppRoutes /> : <AuthRoutes />}</AuthProvider>;
+	return <>{signed ? <AppRoutes /> : <AuthRoutes />}</>;
 };
 
 export default Routes;
