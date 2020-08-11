@@ -88,9 +88,9 @@
 	font-family: 'Poppins';
 }
 
-.input-container form button[type='submit'] {
+.input-container form button[type='button'] {
 	border: 0;
-	width: 100%;
+	width: 35rem;
 	padding: 2rem;
 	font-size: 16px;
 	font-weight: 600;
