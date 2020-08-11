@@ -54,6 +54,7 @@ export const AuthProvider: React.FC = ({ children }) => {
 		api.defaults.headers['Authorization'] = `Bearer ${token}`;
 
 		setUser(_user.data);
+
 		localStorage.setItem('@RProffy:user', JSON.stringify(_user.data));
 	}
 

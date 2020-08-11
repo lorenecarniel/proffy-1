@@ -68,11 +68,11 @@ function Login() {
 					</div>
 					<div className='actions'>
 						<div className='checkbox' onClick={checkBox}>
-							{/* isChecked recebe 'active' quando clicado */}
+							{/* isChecked recebe 'active' quando clicado 
 							<button type='button' className={`checkbox-input ${isChecked}`}>
 								<img src={successCheck} alt='Checked' />
 							</button>
-							<label htmlFor='keepLoggedIn'>Lembrar-me</label>
+							<label htmlFor='keepLoggedIn'>Lembrar-me</label> */}
 						</div>
 						<a href='#'>Esqueci minha senha</a>
 					</div>
