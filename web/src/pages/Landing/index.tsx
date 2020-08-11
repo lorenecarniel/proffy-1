@@ -4,6 +4,7 @@ import logoImg from '../../assets/images/logo.svg';
 import landingImg from '../../assets/images/landing.svg';
 import studyIcon from '../../assets/images/icons/study.svg';
 import giveClassesIcon from '../../assets/images/icons/give-classes.svg';
+import logOutIcon from '../../assets/images/icons/logout.svg';
 import purpleHeartIcon from '../../assets/images/icons/purple-heart.svg';
 import './styles.css';
 import api from '../../services/api';
@@ -22,20 +23,32 @@ const Landing: React.FC = () => {
 
 	function handleLogOut() {
 		logOut();
-		console.log(`Signed inside logOut: ${signed}`);
+		console.log(`Signed in logOut: ${signed}`);
 	}
 
 	return (
 		<div id='page-landing'>
-			<button type='submit' onClick={handleLogOut}>
-				Log Out
-			</button>
-			<div id='page-landing-content' className='container'>
-				<div className='logo-container'>
-					<img src={logoImg} alt='Proffy' />
-					<h2>Sua plataforma de estudos online.</h2>
+			<div className="body">
+				<button type='submit' onClick={handleLogOut}>
+					<img src={logOutIcon} alt="Sair"/>
+				</button>
+				<div id='page-landing-content' className='container'>
+					<div className='logo-container'>
+						<img src={logoImg} alt='Proffy' />
+						<h2>Sua plataforma de estudos online.</h2>
+					</div>
+					<img src={landingImg} alt='Plataforma de estudos' className='hero-image' />
 				</div>
-				<img src={landingImg} alt='Plataforma de estudos' className='hero-image' />
+			</div>
+			<div className="footer">
+				<div className="texts">
+					<span className="welcome">Seja bem-vindo.</span>
+					<span className="question">O que deseja fazer?</span>
+				</div>
+				<span className='total-connections'>
+					Total de {totalConnections} conexões já realizadas{' '}
+					<img src={purpleHeartIcon} alt='Coração Roxo' />
+				</span>
 				<div className='buttons-container'>
 					<Link to='/study' className='study'>
 						<img src={studyIcon} alt='Estudar' />
@@ -46,10 +59,7 @@ const Landing: React.FC = () => {
 						Dar Aulas
 					</Link>
 				</div>
-				<span className='total-connections'>
-					Total de {totalConnections} conexões já realizadas{' '}
-					<img src={purpleHeartIcon} alt='Coração Roxo' />
-				</span>
+				
 			</div>
 		</div>
 	);

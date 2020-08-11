@@ -7,7 +7,7 @@ import purpleHeart from '../../assets/images/icons/purple-heart.svg';
 import { useAuth } from '../../context/auth';
 
 function Login() {
-	const { signed, logIn } = useAuth();
+	const { logIn } = useAuth();
 
 	const [email, setEmail] = useState('');
 	const [password, setPassword] = useState('');
@@ -27,8 +27,7 @@ function Login() {
 	async function handleLogin() {
 		const shouldRemember = isChecked === 'active' ? true : false;
 
-		await logIn(email, password, shouldRemember);
-		console.log(`RES: ${signed}`);
+		logIn(email, password, shouldRemember);
 	}
 
 	return (
@@ -68,11 +67,11 @@ function Login() {
 					</div>
 					<div className='actions'>
 						<div className='checkbox' onClick={checkBox}>
-							{/* isChecked recebe 'active' quando clicado 
-							<button type='button' className={`checkbox-input ${isChecked}`}>
+							{/* isChecked recebe 'active' quando clicado */}
+							<button className={`checkbox-input ${isChecked}`}>
 								<img src={successCheck} alt='Checked' />
 							</button>
-							<label htmlFor='keepLoggedIn'>Lembrar-me</label> */}
+							<label htmlFor='keepLoggedIn'>Lembrar-me</label>
 						</div>
 						<a href='#'>Esqueci minha senha</a>
 					</div>

@@ -95,7 +95,7 @@
 .input-container .actions .checkbox label,
 .input-container .actions a {
 	font-family: 'Poppins';
-	font-size: 14;
+	font-size: 14px;
 	color: var(--color-text-complement);
 	text-decoration: none;
 	user-select: none;

@@ -4,21 +4,44 @@ import backPage from '../../assets/images/icons/back.svg';
 import Input from '../../components/Input';
 import './styles.css';
 
-function ForgotPassword() {
+function Register(){
+	const [name, setName] = useState('');
+	const [lastname, setLastName] = useState('');
 	const [email, setEmail] = useState('');
+	const [password, setPassword] = useState('');
 	const [isLinkEnabled, setIsLinkEnabled] = useState('disabled');
 
 	return (
-		<div id='forgot-page'>
+		<div id='register-page'>
 			<div className='input-container'>
 				<div className="header">
 					<img src={backPage} alt='Voltar' />
 				</div>
-
+				
 				<form>
-					<label htmlFor='senha'>Eita, esqueceu sua senha?</label>
-					<span>Não esquenta, vamos dar um jeito nisso.</span>
+					<label htmlFor='senha'>Cadastro</label>
+					<a>Preencha os dados abaixo para começar.</a>
+					
 					<div className='input-wrapper'>
+						<Input
+							className="first"
+							name='nome'
+							placeholder='Nome'
+							value={name}
+							onChange={(e) => {
+								setIsLinkEnabled('');
+								setName(e.target.value);
+							}}
+						/>
+						<Input
+							name='sobrenome'
+							placeholder='Sobrenome'
+							value={lastname}
+							onChange={(e) => {
+								setIsLinkEnabled('');
+								setLastName(e.target.value);
+							}}
+						/>
 						<Input
 							name='email'
 							type='email'
@@ -29,10 +52,20 @@ function ForgotPassword() {
 								setEmail(e.target.value);
 							}}
 						/>
+						<Input
+							name='senha'
+							type='password'
+							placeholder='Senha'
+							value={password}
+							onChange={(e) => {
+								setIsLinkEnabled('');
+								setPassword(e.target.value);
+							}}
+						/>
 					</div>
 
 					<button type='submit' className={isLinkEnabled} >
-						Enviar
+						Concluir cadastro
 					</button>
 				</form>
 			</div>
@@ -44,8 +77,8 @@ function ForgotPassword() {
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>	
 	);
 };
 
-export default ForgotPassword;
+export default Register;

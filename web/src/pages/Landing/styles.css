@@ -1,10 +1,7 @@
 #page-landing {
-	width: 100vw;
 	height: 100vh;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
+	width: 100vw;
+	display: grid;
 
 	background: var(--color-primary);
 	color: var(--color-text-in-primary);
@@ -86,17 +83,46 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
 }
 
 .total-connections img {
 	margin-left: 0.8rem;
 }
 
+.footer{
+	background: var(--color-background);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.footer .texts{
+	display: grid;
+}
+
+.footer .texts .welcome{
+	font-family: Poppins;
+	font-size: 2rem;
+	font-weight: 400;
+	color: var(--color-text-base);
+}
+
+.footer .texts .question{
+	font-family: Poppins;
+	font-size: 2rem;
+	font-weight: 600;
+	color: var(--color-text-base);
+}
+
+
+
 @media (min-width: 1100px) {
 	#page-landing-content {
 		max-width: 1100px;
 
 		display: grid;
+		margin-left: 160px;
 		grid-template-rows: 350px 1fr;
 		grid-template-columns: 2fr 1fr 1fr;
 		grid-template-areas:
