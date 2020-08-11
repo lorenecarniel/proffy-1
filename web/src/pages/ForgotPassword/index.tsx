@@ -3,6 +3,7 @@ import logoImg from '../../assets/images/logo.svg';
 import backPage from '../../assets/images/icons/back.svg';
 import Input from '../../components/Input';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
 function ForgotPassword() {
 	const [email, setEmail] = useState('');
@@ -11,8 +12,10 @@ function ForgotPassword() {
 	return (
 		<div id='forgot-page'>
 			<div className='input-container'>
-				<div className="header">
-					<img src={backPage} alt='Voltar' />
+				<div className='header'>
+					<Link to='/'>
+						<img src={backPage} alt='Voltar' />
+					</Link>
 				</div>
 
 				<form>
@@ -31,9 +34,11 @@ function ForgotPassword() {
 						/>
 					</div>
 
-					<button type='submit' className={isLinkEnabled} >
-						Enviar
-					</button>
+					<Link to='/notificationEmail'>
+						<button type='button' className={isLinkEnabled}>
+							Enviar
+						</button>
+					</Link>
 				</form>
 			</div>
 			<div className='intro-container'>
@@ -46,6 +51,6 @@ function ForgotPassword() {
 			</div>
 		</div>
 	);
-};
+}
 
 export default ForgotPassword;

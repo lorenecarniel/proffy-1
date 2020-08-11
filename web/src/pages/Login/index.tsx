@@ -5,6 +5,7 @@ import React, { useState, FormEvent } from 'react';
 import successCheck from '../../assets/images/icons/checked.svg';
 import purpleHeart from '../../assets/images/icons/purple-heart.svg';
 import { useAuth } from '../../context/auth';
+import { Link } from 'react-router-dom';
 
 function Login() {
 	const { logIn } = useAuth();
@@ -73,7 +74,7 @@ function Login() {
 							</button>
 							<label htmlFor='keepLoggedIn'>Lembrar-me</label>
 						</div>
-						<a href='#'>Esqueci minha senha</a>
+						<Link to='/forgotPassword'>Esqueci minha senha</Link>
 					</div>
 					<button type='submit' className={isLinkEnabled} onClick={handleLogin}>
 						Entrar
@@ -81,7 +82,7 @@ function Login() {
 					<footer className='footer'>
 						<div className='signIn'>
 							Não tem conta?
-							<a href='#'>Cadastre-se</a>
+							<Link to='/createAccount'>Cadastre-se</Link>
 						</div>
 						<span>
 							É de graça <img src={purpleHeart} alt='heart' />

@@ -41,17 +41,17 @@
 	flex-direction: column;
 }
 
-.input-container .header{
-    min-width: 53%;
-    margin-bottom: 0;
-    margin-top: 1.6rem;
+.input-container .header {
+	min-width: 53%;
+	margin-bottom: 0;
+	margin-top: 1.6rem;
 }
 
 .input-container form {
 	flex: 1;
 	display: flex;
-    width: 35.2rem;
-    position: relative;
+	width: 35.2rem;
+	position: relative;
 	align-items: center;
 	flex-direction: column;
 	justify-content: center;
@@ -60,18 +60,18 @@
 .input-container form label {
 	font-weight: 600;
 	font-size: 3.6rem;
-    line-height: 4.6rem;
-    margin-bottom: 1.6rem;
+	line-height: 4.6rem;
+	/* margin-bottom: 1.6rem; */
 	font-family: 'Poppins';
 	align-self: flex-start;
 	color: var(--color-text-title);
 }
 
-.input-container span{
+.input-container span {
 	font-family: 'Poppins';
 	font-size: 16px;
 	font-weight: 400;
-    margin-bottom: 4rem;
+	margin-bottom: 4rem;
 	align-self: flex-start;
 	color: var(--color-text-base);
 }

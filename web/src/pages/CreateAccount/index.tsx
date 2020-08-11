@@ -3,28 +3,31 @@ import logoImg from '../../assets/images/logo.svg';
 import backPage from '../../assets/images/icons/back.svg';
 import Input from '../../components/Input';
 import './styles.css';
+import { Link } from 'react-router-dom';
 
-function Register(){
+function CreateAccount() {
 	const [name, setName] = useState('');
-	const [lastname, setLastName] = useState('');
 	const [email, setEmail] = useState('');
+	const [lastname, setLastName] = useState('');
 	const [password, setPassword] = useState('');
 	const [isLinkEnabled, setIsLinkEnabled] = useState('disabled');
 
 	return (
 		<div id='register-page'>
 			<div className='input-container'>
-				<div className="header">
-					<img src={backPage} alt='Voltar' />
+				<div className='header'>
+					<Link to='/'>
+						<img src={backPage} alt='Voltar' />
+					</Link>
 				</div>
-				
+
 				<form>
 					<label htmlFor='senha'>Cadastro</label>
 					<a>Preencha os dados abaixo para começar.</a>
-					
+
 					<div className='input-wrapper'>
 						<Input
-							className="first"
+							className='first'
 							name='nome'
 							placeholder='Nome'
 							value={name}
@@ -64,7 +67,7 @@ function Register(){
 						/>
 					</div>
 
-					<button type='submit' className={isLinkEnabled} >
+					<button type='submit' className={isLinkEnabled}>
 						Concluir cadastro
 					</button>
 				</form>
@@ -77,8 +80,8 @@ function Register(){
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	);
-};
+}
 
-export default Register;
+export default CreateAccount;

@@ -30,7 +30,7 @@
 #notification-page .intro-container .wrapper .title {
 	font-size: 54px;
 	margin-top: 4rem;
-    font-weight: bold;
+	font-weight: bold;
 	text-align: center;
 	margin-bottom: 2.4rem;
 	font-family: 'Archivo';
@@ -40,13 +40,13 @@
 #notification-page .intro-container .wrapper .description {
 	font-size: 16px;
 	text-align: center;
-    font-weight: normal;
+	font-weight: normal;
 	margin: 0 7rem 8rem;
 	font-family: 'Poppins';
 	color: var(--color-text-in-primary);
 }
 
-#notification-page .intro-container .wrapper button{
+#notification-page .intro-container .wrapper button {
 	border: 0;
 	padding: 2rem;
 	display: flex;
