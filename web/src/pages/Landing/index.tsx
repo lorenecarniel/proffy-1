@@ -29,9 +29,9 @@ const Landing: React.FC = () => {
 	return (
 		<div id='page-landing'>
 			<div className="body">
-				<button type='submit' onClick={handleLogOut}>
-					<img src={logOutIcon} alt="Sair"/>
-				</button>
+				<div className="button-logout">
+					<img src={logOutIcon} alt="Sair" onClick={handleLogOut}/>	
+				</div>		
 				<div id='page-landing-content' className='container'>
 					<div className='logo-container'>
 						<img src={logoImg} alt='Proffy' />

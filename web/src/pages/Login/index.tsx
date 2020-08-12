@@ -41,7 +41,7 @@ function Login() {
 					</div>
 				</div>
 			</div>
-			<div className='input-container'>
+			<div className='input'>
 				<form>
 					<label htmlFor='email'>Fazer login</label>
 					<div className='input-wrapper'>

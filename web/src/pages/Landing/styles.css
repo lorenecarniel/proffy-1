@@ -115,6 +115,12 @@
 	color: var(--color-text-base);
 }
 
+.body .button-logout img{
+	border-radius: 8px;
+    margin: 2.4rem 0 6.3rem;
+    margin-left: 124rem;
+}
+
 
 
 @media (min-width: 1100px) {
