@@ -8,7 +8,7 @@ import PageHeader from '../../components/PageHeader';
 import warningIcon from '../../assets/images/icons/warning.svg';
 import api from '../../services/api';
 
-function TeacherForm() {
+function Profile() {
 	const history = useHistory();
 
 	const [name, setName] = useState('');
@@ -60,9 +60,9 @@ function TeacherForm() {
 	return (
 		<div id='page-teacher-form' className='container'>
 			<PageHeader
-				title='Que incrível que você quer dar aulas.'
-				description='O primeiro passo é preencher esse formulário de inscrição.'
-				pagename='Dar aulas'
+				title='João Vitor Zaniolo'
+				description='Progamação'
+				pagename= 'Meu perfil'
 			/>
 			<main>
 				<form onSubmit={handleCreateClass}>
@@ -186,4 +186,4 @@ function TeacherForm() {
 	);
 }
 
-export default TeacherForm;
+export default Profile;

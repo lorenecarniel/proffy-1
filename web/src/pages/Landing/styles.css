@@ -79,11 +79,9 @@
 
 .total-connections {
 	font-size: 1.4rem;
-
-	display: flex;
-	align-items: center;
-	justify-content: center;
-
+	
+    width: 14rem;
+    margin: 0 5.3rem 0;
 }
 
 .total-connections img {
@@ -99,6 +97,7 @@
 
 .footer .texts{
 	display: grid;
+	margin-right: 7.8rem;
 }
 
 .footer .texts .welcome{
